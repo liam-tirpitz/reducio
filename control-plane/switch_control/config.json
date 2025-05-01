@@ -1,0 +1,81 @@
+{
+  "aggregation": {
+    "recirc_port": 68,
+    "out_pipe1_port": 60,
+    "data_collection_port": 52,
+    "machines": [
+      {
+        "machine_id": 0,
+        "sensors": [
+          {
+            "global_sensor_id": 0,
+            "ingress_port": 52,
+            "zero_noise_bits": 14,
+            "phase_change_delay": 1700,
+            "is_phase_detection_sensor": true,
+            "max": 10,
+            "min": 0
+          },
+          {
+            "global_sensor_id": 2,
+            "ingress_port": 60,
+            "zero_noise_bits": 14,
+            "phase_change_delay": 1700,
+            "is_phase_detection_sensor": true,
+            "max": 10,
+            "min": 0
+          },
+          {
+            "global_sensor_id": 4,
+            "ingress_port": 60,
+            "zero_noise_bits": 14,
+            "phase_change_delay": 1700,
+            "is_phase_detection_sensor": false,
+            "max": 10,
+            "min": 0
+          }
+        ],
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 10
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "difference": 5
+          }
+        ]
+      },
+      {
+        "machine_id": 1,
+        "sensors": [
+          {
+            "global_sensor_id": 1,
+            "ingress_port": 53,
+            "zero_noise_bits": 14,
+            "phase_change_delay": 1700,
+            "is_phase_detection_sensor": true,
+            "max": 10,
+            "min": 0
+          }
+        ],
+        "differences": []
+      }
+    ]
+   
+  },
+  "ring": {
+    "read_from_dp_interval_in_s": 6,
+    "read_from_dp_interval_in_s_during_rampup": 1,
+    "window": 7,
+    "mask": "0xFFFFFFFF",
+    "local_ring_size": 500,
+    "fine-blanking": {
+      "stable_std_threshold": 1100,
+      "gradient_window": 4,
+      "restart_threshold": 5000
+    }
+  }
+}
